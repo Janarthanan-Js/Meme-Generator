@@ -1,0 +1,120 @@
+/* ---------- Base ---------- */
+* {
+    box-sizing: border-box; /* padding/border don't add to element width */
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background-color: #f2f2f2; /* light grey page background, as in the screenshot */
+}
+
+/* ---------- Header (purple bar) ---------- */
+.header {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    padding: 0 1.5rem;
+    color: #ffffff;
+    background: linear-gradient(90deg, #672280 0%, #a626d3 100%);
+}
+
+.header img {
+    height: 30px;       /* small logo on the left */
+    margin-right: 8px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* ---------- Main wrapper ---------- */
+main {
+    max-width: 550px;   /* keeps the form + meme as a centered column */
+    margin: 0 auto;
+    padding: 36px 24px;
+}
+
+/* ---------- Form ---------- */
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Top Text | Bottom Text side by side */
+    gap: 17px;
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;         /* label text above the input */
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #111827;
+}
+
+.form input {
+    margin-top: 5px;
+    padding: 9px 6px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.form button {
+    grid-column: 1 / -1;            /* button spans both columns */
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    background: linear-gradient(90deg, #711f8d 0%, #a818da 100%);
+}
+
+.form button:hover {
+    opacity: 0.9;
+}
+
+/* ---------- Meme preview ---------- */
+.meme {
+    position: relative;             /* so the text spans can be placed over the image */
+    margin-top: 25px;
+}
+
+.meme img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 3px;
+}
+
+.meme span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 15px 0;
+    padding: 0 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+    /* black outline around the white text, done with 4 offset shadows + a blur */
+    text-shadow:
+        2px 2px 0 #000, -2px 2px 0 #000,
+        2px -2px 0 #000, -2px -2px 0 #000,
+        0 2px 0 #000, 2px 0 0 #000,
+        0 -2px 0 #000, -2px 0 0 #000,
+        2px 4px 5px rgba(0, 0, 0, 0.6);
+}
+
+.meme .top {
+    top: 0;
+}
+
+.meme .bottom {
+    bottom: 0;
+}
